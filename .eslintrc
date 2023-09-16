@@ -1,0 +1,62 @@
+{
+  "extends": ["plugin:@typescript-eslint/recommended", "universe/native"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["@typescript-eslint", "prettier"],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "rules": {
+    "semi": "off",
+    "comma-dangle": ["error", "never"],
+    "space-before-function-paren": [
+      "error",
+      { "anonymous": "never", "named": "never", "asyncArrow": "always" }
+    ],
+    "no-dupe-args": "off",
+    "no-redeclare": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "semi": true,
+        "singleQuote": true,
+        "arrowParens": "always",
+        "tabWidth": 2,
+        "bracketSpacing": true,
+        "trailingComma": "none",
+        "endOfLine": "auto"
+      }
+    ],
+    "class-methods-use-this": "off",
+    "no-useless-constructor": "off",
+    "camelcase": "off",
+    "no-unused-vars": "off",
+    "no-explicit-any": "off",
+    "@typescript-exlint/no-explicit-any": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      { "argsIgnorePattern": "_" }
+    ],
+    "import/newline-after-import": ["error", { "count": 1 }],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "ts": "never",
+        "tsx": "never",
+        ".routes.tsx": "never"
+      }
+    ],
+    "no-console": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
+  }
+}
